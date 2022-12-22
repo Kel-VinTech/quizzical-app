@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import firstSlide from './components/FirstSlide'
+import firstSlide from './components/firstSlide'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,7 +7,6 @@ function App() {
   return (
     <div className="container">
      <firstSlide />
-     <h1>helllo</h1>
     </div>
   )
 }
