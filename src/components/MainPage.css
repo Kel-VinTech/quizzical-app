@@ -19,6 +19,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    color: #414b7e;
   }
 
 h2{
@@ -32,4 +33,9 @@ p{
   button{
     padding: 10px 30px;
     font-size: 1.1rem;
+    background-color: #414b7e;;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
   }
