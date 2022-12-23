@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MainPage from './components/MainPage'
+import Questionpage from './components/QuestionPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -7,7 +8,8 @@ function App() {
   return (
     <div className="container">
       
-      <MainPage />
+      {/* <MainPage /> */}
+      <Questionpage />
     </div>
   )
 }
