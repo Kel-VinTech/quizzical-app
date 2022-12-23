@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import firstSlide from './components/firstSlide'
+import MainPage from './components/MainPage'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="container">
-     <firstSlide />
+      
+      <MainPage />
     </div>
   )
 }
