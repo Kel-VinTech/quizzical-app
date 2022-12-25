@@ -47,6 +47,7 @@ body{
 .questions h3{
   font-size: 1.6rem;
   padding-bottom: 1.2rem;
+  color: #1e2238;
 }
 
 .answer_btn{
@@ -63,4 +64,14 @@ button{
   border: 1px solid #414b7e;
   border-radius: 10px;
   color: #414b7e;
+}
+
+.show{
+  padding: 10px 30px;
+    font-size: 1.1rem;
+    background-color: #414b7e;;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
 }

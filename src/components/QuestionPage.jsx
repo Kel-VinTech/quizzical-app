@@ -54,7 +54,8 @@ const Questionpage = () => {
                     <button>animal</button>
                 </div>
             </div>
-            <button>Show Answers </button>
+            <button className="show">
+                Check answers </button>
         </div>
     )
 }
