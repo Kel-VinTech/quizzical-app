@@ -17,7 +17,7 @@ function App() {
 
  useEffect(() => {
   async function getQuestion(){
-    const res = await fetch('https://opentdb.com/api.php?amount=5')
+    const res = await fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
     const data = await res.json()
     let q = []
     data.results.forEach(question => {
