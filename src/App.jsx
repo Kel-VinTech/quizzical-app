@@ -3,26 +3,32 @@ import MainPage from './components/MainPage'
 import { nanoid } from 'nanoid'
 import Questionpage from './components/QuestionPage'
 
+
 function App() {
   const [started, setStarted] = useState(false)
   const [count, setCount] = useState(0)
   const [correct, setCorrect] = useState(0)
   const [checked, setChecked] = useState(false)
-  const [question, setQuestion] = useState([])
+  const [questions, setQuestions] = useState([])
 
-  const array = (arr) => arr.sort(() => Math.random() - 0.5)
+
+
+  const shuffleArray = (...item) => {item.sort(() => Math.random() - 0.5)};
+
  useEffect(() => {
-  async function question(){
+  async function getQuestion(){
     const res = await fetch('https://opentdb.com/api.php?amount=5')
     const data = await res.json()
     let q = []
-    data.results.forEach(questions => {
-      q.push({id:nanoid(), question:question.question, correct:question.answers, selected:null , checked:false, answers:array(...question.incorrect_answers, question.correct_answers)})
+    data.results.forEach(question => {
+      q.push({id:nanoid(), question:question.question, correct:question.answer, selected:null , checked:false, answers:shuffleArray([...question.incorrect_answers, question.correct_answer])})
     })
-    setQuestion(q)
+    setQuestions(q)
   }
-  question()
+  getQuestion()
  } ,[count])
+
+
 
  const questionElement = questions ? questions.map(question => {
   return (
@@ -35,7 +41,7 @@ function App() {
    }) : []
 
  const start =() => {
-  setStarted(x => !x)
+  setStarted(prevState => !prevState)
  }
   return (
     <div className="main_container">
@@ -45,7 +51,6 @@ function App() {
           {questionElement}
           <div className='end-content'>
             <button className='check'>Check answers</button>
-      
           </div>
         </div>
         :
