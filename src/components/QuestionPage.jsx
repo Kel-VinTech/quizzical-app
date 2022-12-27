@@ -1,61 +1,23 @@
 import React from "react";
+import { nanoid } from "nanoid";
 
-
-
-const Questionpage = () => {
+const Questionpage = (props) => {
+    let answers = props.q.answers
+    const answerElements = answers.map(answer => {
+        let id = null
+        if (props.q.checked){
+            if(props.q.correct === answer){
+                id = 'correct'
+            }
+        }else if (props.q.selected === answer){
+            id ='incorrect'
+        } else {
+            id ='not-selected'
+        }
+    })
     return (
         <div className="question_container">
-            <div className="questions">
-                <h3>What is a dog?</h3>
-                <div className="answer_btn">
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                </div>
-            </div>
-
-            <div className="questions">
-                <h3>What is a dog?</h3>
-                <div className="answer_btn">
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                </div>
-            </div>
-
-            <div className="questions">
-                <h3>What is a dog?</h3>
-                <div className="answer_btn">
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                </div>
-            </div>
-
-            <div className="questions">
-                <h3>What is a dog?</h3>
-                <div className="answer_btn">
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                </div>
-            </div>
-
-            <div className="questions">
-                <h3>What is a dog?</h3>
-                <div className="answer_btn">
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                    <button>animal</button>
-                </div>
-            </div>
-            <button className="show">
-                Check answers </button>
+           {answerElements}
         </div>
     )
 }
