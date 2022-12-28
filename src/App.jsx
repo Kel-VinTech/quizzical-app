@@ -13,20 +13,26 @@ function App() {
 
 
 
-  const shuffleArray = (...item) => {item.sort(() => Math.random() - 0.5)};
+  const shuffleArray = (item) => {
+    return item.sort(() => Math.random() - 0.5)};
 
  useEffect(() => {
   async function getQuestion(){
     const res = await fetch('https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple')
     const data = await res.json()
+    // console.log(data)
+    
     let q = []
     data.results.forEach(question => {
-      q.push({id:nanoid(), question:question.question, correct:question.answer, selected:null , checked:false, ans:shuffleArray([...question.incorrect_answers, question.correct_answer])})
+      q.push({id:nanoid(), question:question.question, correct:question.correct_answer, selected:null , checked:false, answers:shuffleArray([question.incorrect_answers, question.correct_answer])})
+      // console.log(question)
     })
     setQuestions(q)
   }
   getQuestion()
  } ,[count])
+
+
 
 
 
