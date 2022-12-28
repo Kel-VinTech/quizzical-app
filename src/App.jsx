@@ -21,7 +21,7 @@ function App() {
     const data = await res.json()
     let q = []
     data.results.forEach(question => {
-      q.push({id:nanoid(), question:question.question, correct:question.answer, selected:null , checked:false, answers:shuffleArray([...question.incorrect_answers, question.correct_answer])})
+      q.push({id:nanoid(), question:question.question, correct:question.answer, selected:null , checked:false, ans:shuffleArray([...question.incorrect_answers, question.correct_answer])})
     })
     setQuestions(q)
   }
