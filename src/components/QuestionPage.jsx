@@ -4,7 +4,6 @@ import { nanoid } from "nanoid";
 const Questionpage = (props) => {
 
     let answers = props.q.answers
-    console.log(answers)
     const answersElement = answers.map(answer =>{
         let id = null
 

@@ -32,8 +32,41 @@ function App() {
   getQuestion()
  } ,[count])
 
+ const handleCheck = (event) => {
+  let selected = true;
+  questions.forEach(question => {
+    if(question.selected == null){
+      selected = false;
+      return
+    }
 
+  })
+  if (selected){
+    return
+  }
+  setQuestions(questions => questions.map(question =>{
+    return {...question, checked:true}
+  }))
+  setChecked(true)
+  let correct = 0
+  questions.forEach(question => {
+    if(question.correct === question.selected){
+      correct += 1
+    }
+  })
+  setCorrect(correct)
+ }
 
+ const handleClickAnswer = (id, answer) => {
+  setQuestions(questions => questions.map(question => {
+    return question.id === id ? {...question, selected:answer} : question
+  }))
+ }
+
+ const handlePlayAgain = () => {
+  setCount(count => count + 1)
+  setChecked(false)
+ }
 
 
  const questionElement = questions ? questions.map(question => {
@@ -41,6 +74,7 @@ function App() {
     <Questionpage
     key={question.id}
     q={question}
+    handleClickAnswer={handleClickAnswer}
     id={question.id}
     />
   )
@@ -56,7 +90,9 @@ function App() {
         <div className='start=content'>
           {questionElement}
           <div className='end-content'>
-            <button className='check'>Check answers</button>
+            <button className='check'
+            onClick={checked ? handlePlayAgain : handleCheck}
+            >{checked ? "Play again" : "Check answer"}</button>
           </div>
         </div>
         :
