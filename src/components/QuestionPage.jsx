@@ -4,9 +4,15 @@ import { nanoid } from "nanoid";
 const Questionpage = (props) => {
 
     let answers = props.q.answers
+
+    const handleClick = (answer) => {
+        if (props.q.checked) {
+            return
+        }
+        props.handleClickAnswer(props.id, answer)
+    }
     const answersElement = answers.map(answer =>{
         let id = null
-
         if (props.q.checked){
             if(props.q.correct == answer){
                 id = 'correct'
@@ -18,7 +24,9 @@ const Questionpage = (props) => {
         }
 
         return (
-            <button key={nanoid()} id={id} className={answer === props.q.selected ? 'answer selected' : 'answer'} >{answer}</button>
+            <button key={nanoid()} id={id} className={answer === props.q.selected ? 'answer selected' : 'answer'} 
+            onClick={() => handleClick(answer)} 
+            >{answer}</button>
         )
         
     })

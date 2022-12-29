@@ -32,7 +32,7 @@ function App() {
   getQuestion()
  } ,[count])
 
- const handleCheck = (event) => {
+ const handleCheck = () => {
   let selected = true;
   questions.forEach(question => {
     if(question.selected == null){
@@ -89,11 +89,14 @@ function App() {
         started?
         <div className='start=content'>
           {questionElement}
+
           <div className='end-content'>
+            {checked && <span className='score'>You scored {correct}/5 answers</span>}
             <button className='check'
             onClick={checked ? handlePlayAgain : handleCheck}
             >{checked ? "Play again" : "Check answer"}</button>
           </div>
+
         </div>
         :
         <MainPage
