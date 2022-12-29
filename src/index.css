@@ -18,14 +18,18 @@
 
 body{
   margin: 0 auto;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
 }
 
-.container{
+.main_container{
   min-width: 300px;
   min-height: 100vh;
+  background: #f5f7fb;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .question_container{
@@ -33,8 +37,17 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: .6rem;
+  margin-bottom: .65rem;
+  width: 100%;
+  text-align: left;
 }
 
+.question_container h3{
+  font-size: 1.2rem;
+  color: rgb(41, 50, 100);
+  margin-bottom: .5rem;
+}
 .questions{
   display: flex;
   padding: 1rem ;
@@ -74,4 +87,35 @@ button{
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
+}
+.start_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.end_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.content_container{
+  padding: 0 1.1rem;
+}
+
+.answer{
+  font-weight: .6rem;
+  color: rgb(41, 50, 100);
+  margin-right: .6rem;
+  padding: 2px 8px;
+  border-radius: .3rem;
+}
+
+.line{
+  margin-top: .5rem;
 }

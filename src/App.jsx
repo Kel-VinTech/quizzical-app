@@ -87,10 +87,10 @@ function App() {
     <div className="main_container">
       <div className='content_container'> {
         started?
-        <div className='start=content'>
+        <div className='start_content'>
           {questionElement}
 
-          <div className='end-content'>
+          <div className='end_content'>
             {checked && <span className='score'>You scored {correct}/5 answers</span>}
             <button className='check'
             onClick={checked ? handlePlayAgain : handleCheck}
