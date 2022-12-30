@@ -34,7 +34,7 @@ const Questionpage = (props) => {
     return (
         <div className="question_container">
             <h3>{(props.q.question)}</h3>
-            <div className="answer_btn2">
+            <div>
             {answersElement}
             </div>
 

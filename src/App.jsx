@@ -47,6 +47,7 @@ function App() {
   setQuestions(questions => questions.map(question =>{
     return {...question, checked:true}
   }))
+
   setChecked(true)
   let correct = 0
   questions.forEach(question => {
