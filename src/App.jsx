@@ -102,10 +102,7 @@ function App() {
         :
         <MainPage
         start = {start} 
-        />
-
-      }
-
+        /> }
       </div>
 
     </div>

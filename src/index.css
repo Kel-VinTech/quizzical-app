@@ -17,7 +17,7 @@ body{
 
 .main_container{
   min-width: 360px;
-  min-height: 100vh;
+  min-height: 95vh;
   background: #f5f7fb;
   display: flex;
   justify-content: center;
@@ -36,24 +36,11 @@ body{
 }
 
 .question_container h3{
-  font-size: 1.1rem;
+  font-size: .9rem;
   color: rgb(41, 50, 100);
-  margin-bottom: .5rem;
+  margin-bottom: .4rem;
 }
-/* .questions{
-  display: flex;
-  padding: 1rem ;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-  
-} */
-/* .questions h3{
-  font-size: 1.4rem;
-  padding-bottom: 1.2rem;
-  color: #1e2238;
-} */
+
 
 .answer_btn{
   display: flex;
@@ -96,27 +83,28 @@ button{
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: .6rem;
   margin-top: 2rem;
-}
-
-.content_container{
   padding: 0 1rem;
 }
 
+.content_container{
+  padding: 1rem 1rem;
+}
+
 .answer{
-  font-weight: .6rem;
   color: rgb(41, 50, 100);
-  margin-right: .6rem;
+  margin-right: .5rem;
   padding: 2px 8px;
   border-radius: .3rem;
   margin-bottom: .3rem;
-  font-size: 1rem;
+  font-size: .9rem;
+  /* max-width: 80%; */
 }
 
 .score{
   font-weight: 700;
-  font-size: 1rem;
+  font-size: .8rem;
 }
 
 .check{
