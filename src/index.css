@@ -42,14 +42,14 @@ body{
 }
 
 
-.answer_btn{
+/* .answer_btn{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: 8px;
-}
+} */
 
 button{
   font-size: 1.2rem;
@@ -61,8 +61,8 @@ button{
 }
 
 .show{
-  padding: 10px 30px;
-    font-size: 1.1rem;
+    padding: 9px 28px;
+    font-size: 1rem;
     background-color: #414b7e;;
     border: none;
     color: #fff;
@@ -99,7 +99,6 @@ button{
   border-radius: .3rem;
   margin-bottom: .3rem;
   font-size: .9rem;
-  /* max-width: 80%; */
 }
 
 .score{
@@ -108,15 +107,15 @@ button{
 }
 
 .check{
-    padding: 16px 32px;
+    padding: 10px 28px;
     background-color: #414b7e;;
     border: none;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-    font-size: 1.1rem;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 18px;
 }
 .selected{
   background-color: #d6dbf5;
